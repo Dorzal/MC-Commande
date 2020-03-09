@@ -32,11 +32,11 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "environmentVariables": {
         "ASPNETCORE_URLS": "https://+:443;http://+:80",
-        "ASPNETCORE_HTTPS_PORT": "44306"
+        "ASPNETCORE_HTTPS_PORT": "44307"
       },
-      "httpPort": 51162,
+      "httpPort": 51163,
       "useSSL": true,
-      "sslPort": 44306
+      "sslPort": 44307
     }
   }
 }

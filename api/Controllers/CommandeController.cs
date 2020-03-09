@@ -20,7 +20,7 @@ namespace Commande.Controllers
         [HttpGet]
         public List<Model.Commande> Get()
         {
-            return _context.Commande.ToList();
+            return _context.Commande.Include(x => x.Articles).ToList();
         }
 
         [HttpGet("{id}", Name = "id")]
@@ -30,10 +30,11 @@ namespace Commande.Controllers
         }
 
         [HttpPost]
-        public void CreateCommande([FromBody]Model.Commande commande)
+        public Model.Commande CreateCommande([FromBody]Model.Commande commande)
         {
             _context.Commande.Add(commande);
             _context.SaveChanges();
+            return commande;
         }
 
         [HttpPut]

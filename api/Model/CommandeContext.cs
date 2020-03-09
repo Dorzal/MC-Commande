@@ -7,6 +7,7 @@ namespace Commande.Model
         public CommandeContext(DbContextOptions<CommandeContext> options) : base(options)
         {
         }
+
         public DbSet<Commande> Commande { get; set; }
     }
 }
