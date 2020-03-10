@@ -1,6 +1,7 @@
 ﻿using Commande.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -49,61 +50,59 @@ namespace Commande.Controllers
 
         private void SendMail(Model.Commande commande)
         {
-            MailAddress fromAddress = new MailAddress("verretech1@gmail.com", "Verre Tech");
-            MailAddress toAddress = new MailAddress(commande.Email.Trim(), commande.LastName);
-            const string fromPassword = "V3rretech!";
-            const string subject = "VERRE-TECH Validation Commande";
-            string body = "Bonjour " + commande.LastName.ToUpper().Trim() + " " + commande.FirstName.Trim() + ",<br> Votre commande a bien été validée."; ;
+            //MailAddress fromAddress = new MailAddress("verretech1@gmail.com", "Verre Tech");
+            //MailAddress toAddress = new MailAddress(commande.Email.Trim(), commande.LastName);
+            //const string fromPassword = "V3rretech!";
+            //const string subject = "VERRE-TECH Validation Commande";
+            //string body = "Bonjour " + commande.LastName.ToUpper().Trim() + " " + commande.FirstName.Trim() + ",<br> Votre commande a bien été validée."; ;
 
-            SmtpClient smtp = new SmtpClient
+            //SmtpClient smtp = new SmtpClient
+            //{
+            //    Host = "mc-smtp",
+            //    Port = 587,
+            //    EnableSsl = true,
+            //    DeliveryMethod = SmtpDeliveryMethod.Network,
+            //    UseDefaultCredentials = false,
+            //    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            //};
+            //using (MailMessage message = new MailMessage(fromAddress, toAddress)
+            //{
+            //    Subject = subject,
+            //    Body = body
+            //})
+            //{
+            //    try
+            //    {
+            //        {
+            //            smtp.Send(message);
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        throw;
+            //    }
+            //}
+            try
             {
-                Host = "mc-smtp",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
-            using (MailMessage message = new MailMessage(fromAddress, toAddress)
-            {
-                Subject = subject,
-                Body = body
-            })
-            {
-                try
-                {
-
-                    {
-                        smtp.Send(message);
-                    }
-                }
-                catch
-                {
-                    throw;
-                }
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("verretech1@gmail.com");
+                message.To.Add(new MailAddress(commande.Email));
+                message.Subject = "VERRE-TECH Validation Commande";
+                message.IsBodyHtml = true;
+                message.Body = @"Bonjour " + commande.LastName.ToUpper().Trim() + " " + commande.FirstName.Trim() + ",<br> Votre commande a bien été validée.";
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("verretech1@gmail.com", "V3rretech!");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
             }
-            //try
-            //{
-            //    MailMessage message = new MailMessage();
-            //    SmtpClient smtp = new SmtpClient();
-            //    message.From = new MailAddress("verretech1@gmail.com");
-            //    message.To.Add(new MailAddress(commande.Email));
-            //    message.CC.Add(new MailAddress("verretech1@gmail.com"));
-            //    message.Subject = "VERRE-TECH Validation Commande";
-            //    message.IsBodyHtml = true;
-            //    message.Body = @"Bonjour " + commande.LastName.ToUpper().Trim() + " " + commande.FirstName.Trim() + ",<br> Votre commande a bien été validée.";
-            //    smtp.Port = 587;
-            //    smtp.Host = "smtp.gmail.com";
-            //    smtp.EnableSsl = true;
-            //    smtp.UseDefaultCredentials = false;
-            //    smtp.Credentials = new NetworkCredential("verretech1@gmail.com", "V3rretech!");
-            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //    smtp.Send(message);
-            //}
-            //catch (Exception e)
-            //{
-            //    throw e;
-            //}
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         [HttpDelete]
