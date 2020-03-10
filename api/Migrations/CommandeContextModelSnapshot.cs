@@ -29,6 +29,9 @@ namespace Commande.Migrations
                     b.Property<long?>("CommandeId")
                         .HasColumnType("bigint");
 
+                    b.Property<int>("IdArticle")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Qty")
                         .HasColumnType("integer");
 

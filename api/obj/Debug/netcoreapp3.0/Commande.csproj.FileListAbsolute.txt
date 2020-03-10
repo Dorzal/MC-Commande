@@ -246,3 +246,4 @@ C:\Users\mazzi\Documents\BACKUP\azzi\Documents\CESI\Fil Rouge\API T\Commande\Com
 C:\Users\mazzi\Documents\BACKUP\azzi\Documents\CESI\Fil Rouge\API T\Commande\Commande\obj\Debug\netcoreapp3.0\Commande.csproj.CopyComplete
 C:\Users\mazzi\Documents\BACKUP\azzi\Documents\CESI\Fil Rouge\API T\Commande\Commande\obj\Debug\netcoreapp3.0\Commande.dll
 C:\Users\mazzi\Documents\BACKUP\azzi\Documents\CESI\Fil Rouge\API T\Commande\Commande\obj\Debug\netcoreapp3.0\Commande.pdb
+C:\Users\mazzi\Documents\BACKUP\azzi\Documents\CESI\Fil Rouge\API T\Commande\Commande\obj\Debug\netcoreapp3.0\Commande.csprojAssemblyReference.cache

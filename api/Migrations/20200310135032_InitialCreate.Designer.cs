@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Commande.Migrations
 {
     [DbContext(typeof(CommandeContext))]
-    [Migration("20200305180946_InitialCreate")]
+    [Migration("20200310135032_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,9 @@ namespace Commande.Migrations
 
                     b.Property<long?>("CommandeId")
                         .HasColumnType("bigint");
+
+                    b.Property<int>("IdArticle")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Qty")
                         .HasColumnType("integer");

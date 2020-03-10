@@ -37,6 +37,7 @@ namespace Commande.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    IdArticle = table.Column<int>(nullable: false),
                     Qty = table.Column<int>(nullable: false),
                     CommandeId = table.Column<long>(nullable: true)
                 },
