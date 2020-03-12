@@ -1,20 +1,20 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim AS base
-WORKDIR /app
+WORKDIR /index
 EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
-COPY ["Commande/Commande.csproj", "Commande/"]
-RUN dotnet restore "Commande/Commande.csproj"
+COPY ["Commande.csproj", ""]
+RUN dotnet restore "./Commande.csproj"
 COPY . .
-WORKDIR "/src/Commande"
-RUN dotnet build "Commande.csproj" -c Release -o /app/build
+WORKDIR "/src/."
+RUN dotnet build "Commande.csproj" -c Release -o /index
 
 FROM build AS publish
-RUN dotnet publish "Commande.csproj" -c Release -o /app/publish
+RUN dotnet publish "Commande.csproj" -c Release -o /index
 
 FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
+WORKDIR /index
+COPY --from=publish /index .
 ENTRYPOINT ["dotnet", "Commande.dll"]

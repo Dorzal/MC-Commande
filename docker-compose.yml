@@ -14,13 +14,13 @@ volumes:
 
 services:
 
-  # dotnet:
-  #  build: api
-  #  container_name: dotnet
-  #  ports:
-  #    - 80:80
-  #  networks:
-  #    - default
+  dotnet:
+    build: api
+    container_name: dotnet
+    ports:
+    - '80:80'
+    networks:
+    - default
 
   postgres:    
     container_name: postgres

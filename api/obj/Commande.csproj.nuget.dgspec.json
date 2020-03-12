@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mazzi\\Documents\\BACKUP\\azzi\\Documents\\CESI\\Fil Rouge\\API T\\Commande\\Commande\\Commande.csproj": {}
+    "D:\\VerreTech\\MC-Commande\\api\\Commande.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mazzi\\Documents\\BACKUP\\azzi\\Documents\\CESI\\Fil Rouge\\API T\\Commande\\Commande\\Commande.csproj": {
+    "D:\\VerreTech\\MC-Commande\\api\\Commande.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mazzi\\Documents\\BACKUP\\azzi\\Documents\\CESI\\Fil Rouge\\API T\\Commande\\Commande\\Commande.csproj",
+        "projectUniqueName": "D:\\VerreTech\\MC-Commande\\api\\Commande.csproj",
         "projectName": "Commande",
-        "projectPath": "C:\\Users\\mazzi\\Documents\\BACKUP\\azzi\\Documents\\CESI\\Fil Rouge\\API T\\Commande\\Commande\\Commande.csproj",
-        "packagesPath": "C:\\Users\\mazzi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mazzi\\Documents\\BACKUP\\azzi\\Documents\\CESI\\Fil Rouge\\API T\\Commande\\Commande\\obj\\",
+        "projectPath": "D:\\VerreTech\\MC-Commande\\api\\Commande.csproj",
+        "packagesPath": "C:\\Users\\Arnaud\\.nuget\\packages\\",
+        "outputPath": "D:\\VerreTech\\MC-Commande\\api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mazzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Arnaud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -43,6 +38,14 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Mailjet.Api": {
+              "target": "Package",
+              "version": "[1.2.2, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.0.0, )"
